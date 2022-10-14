@@ -10,7 +10,8 @@ const todos = [
   { text: 'Cortar cebolla', completed: true },
   { text: 'Tomar el cursso de intro a React', completed: false },
   { text: 'Llorar con la llorona', completed: false },
-  { text: 'LALALALAA', completed: false },
+  { text: 'ver noticias del huracan', completed: false },
+  { text: 'mirar videos de CR7', completed: false },
 ];
 
 function App() {
