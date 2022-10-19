@@ -13,6 +13,8 @@ function AppUI({
     searchedTodos,
     completeTodo,
     deleteTodo,
+    loading,
+    error
 }) {
     return (
         <React.Fragment>
@@ -26,6 +28,9 @@ function AppUI({
             />
 
             <TodoList>
+                {error && <p>Hubo un error, corrreeee</p>}
+                {loading && <p>Estamos cargando, no te desesperes</p>}
+                {(!loading && !searchedTodos.length) && <p>Crear tu primer ToDo</p>}
                 {searchedTodos.map(todo => (
                     <TodoItem
                         key={todo.text}
