@@ -42,5 +42,5 @@
   "devDependencies": {
     "gh-pages": "^4.0.0"
   },
-  "homepag":"https://beto1581.github.io/todo-list"
+  "homepage":"https://beto1581.github.io/todo-list"
 }
