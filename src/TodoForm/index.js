@@ -1,13 +1,10 @@
 import React from "react";
-import { BiHome, BiMoney, BiBookBookmark,BiRun, BiSmile} from "react-icons/bi";
+import { BiHome, BiMoney, BiBookBookmark, BiRun, BiSmile } from "react-icons/bi";
 import Select from 'react-select';
-import { TodoContext } from "../TodoContext";
 import './TodoForm.css';
-function TodoForm() {
+function TodoForm(addTodo, setOpenModal) {
 
-    const {
-        addTodo,
-        setOpenModal } = React.useContext(TodoContext);
+
     const [newTodoValue, setNewTodoValue] = React.useState('');
     const onCancel = (event) => {
         setOpenModal(false);
@@ -15,7 +12,7 @@ function TodoForm() {
 
     const onSubmit = (event) => {
         event.preventDefault();
-        addTodo(newTodoValue,selectedOption.value);
+        addTodo(newTodoValue, selectedOption.value);
         setOpenModal(false);
         setNewTodoValue('')
 
@@ -30,34 +27,34 @@ function TodoForm() {
 
     // handle onChange event of the dropdown
     const handleChange = e => {
-        setSelectedOption(e); 
+        setSelectedOption(e);
     }
 
     const availableOptions = [
         {
             value: 'home-task',
             text: "Home Task",
-            icon: <BiHome />  
+            icon: <BiHome />
         },
         {
             value: 'work-task',
             text: 'Work Task',
-            icon: <BiMoney/>  
+            icon: <BiMoney />
         },
         {
             value: 'university-task',
             text: 'University Task',
-            icon: <BiBookBookmark/>  
+            icon: <BiBookBookmark />
         },
         {
             value: 'sport-task',
             text: 'Sport Task',
-            icon: <BiRun />  
+            icon: <BiRun />
         },
         {
             value: 'general-task',
             text: 'General Task',
-            icon: <BiSmile/>  
+            icon: <BiSmile />
         }
     ];
     return (
@@ -69,7 +66,7 @@ function TodoForm() {
                 placeholder="Cortar la cebolla para el almuerzo"
             />
             <Select
-            className="category-selector"
+                className="category-selector"
                 placeholder="Task Category"
                 value={selectedOption}
                 options={availableOptions}
