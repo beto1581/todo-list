@@ -2,8 +2,7 @@ import React from "react";
 import { BiHome, BiMoney, BiBookBookmark, BiRun, BiSmile } from "react-icons/bi";
 import Select from 'react-select';
 import './TodoForm.css';
-function TodoForm(addTodo, setOpenModal) {
-
+function TodoForm({ addTodo, setOpenModal }) {
 
     const [newTodoValue, setNewTodoValue] = React.useState('');
     const onCancel = (event) => {
