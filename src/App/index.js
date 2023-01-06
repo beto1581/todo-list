@@ -12,7 +12,7 @@ import { TodosLoading } from '../TodosLoading';
 import { EmptyTodos } from '../EmptysTodos';
 import { TodoHeader } from '../TodoHeader';
 import { TodoFilter } from '../TodoFilter';
-import { ChangeAlertWithStorageListener } from '../ChangeAlert';
+import { ChangeAlert } from '../ChangeAlert';
 
 function App() {
     const {
@@ -35,7 +35,7 @@ function App() {
             <TodoHeader loading={loading}>
                 <TodoCounter
                     totalTodos={totalTodos}
-                    completedTodos={completedTodos} 
+                    completedTodos={completedTodos}
                 />
                 <TodoSearch
                     searchValue={searchValue}
@@ -43,30 +43,30 @@ function App() {
                 />
                 <TodoFilter />
             </TodoHeader>
-            <TodoList 
-            error={error}
-            loading={loading}
-            searchedTodos={searchedTodos}
-            totalTodos={totalTodos}
-            searchText={searchValue}
+            <TodoList
+                error={error}
+                loading={loading}
+                searchedTodos={searchedTodos}
+                totalTodos={totalTodos}
+                searchText={searchValue}
 
-            onError={()=> <TodosError/>}
-            onLoading={()=> <TodosLoading/>}
-            onEmptyTodos={()=> <EmptyTodos/>}
-            onEmptySearchResults={(searchText)=> <p>No hay resultados para: {searchText}</p> }
-            render={(todo)=>(
-                <TodoItem
-                key={todo.text}
-                text={todo.text}
-                completed={todo.completed}
-                onComplete={() => completeTodo(todo.text)}
-                onDelete={() => deleteTodo(todo.text)}
-            />
-            )}
+                onError={() => <TodosError />}
+                onLoading={() => <TodosLoading />}
+                onEmptyTodos={() => <EmptyTodos />}
+                onEmptySearchResults={(searchText) => <p>No hay resultados para: {searchText}</p>}
+                render={(todo) => (
+                    <TodoItem
+                        key={todo.text}
+                        text={todo.text}
+                        completed={todo.completed}
+                        onComplete={() => completeTodo(todo.text)}
+                        onDelete={() => deleteTodo(todo.text)}
+                    />
+                )}
             >
 
             </TodoList>
-            
+
             <CreateTodoButton
                 setOpenModal={setOpenModal}
             />
@@ -79,7 +79,9 @@ function App() {
                 </Modal>
             )
             }
-            <ChangeAlertWithStorageListener sincronize={sincronizeTodos} />
+            <ChangeAlert
+                sincronize={sincronizeTodos}
+            />
         </React.Fragment>
     );
 }
