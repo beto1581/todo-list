@@ -70,7 +70,7 @@ function useTodos() {
             deleteTodo,
             openModal,
             setOpenModal,
-            sincronizeTodos
+            sincronizeTodos,
         }
 
     );
