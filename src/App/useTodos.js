@@ -19,7 +19,8 @@ function useTodos() {
     const totalTodos = todos.length;
 
     let searchedTodos = [];
-
+    let searchedCategory = '';
+    
     if (!searchValue.length >= 1) {
         searchedTodos = todos;
     } else {

@@ -4,6 +4,7 @@ import './TodoList.css'
 function TodoList(props) {
 
     const renderFunc = props.children || props.render;
+    console.log(renderFunc);
     return (
         <section className='TodoList-container'>
             {props.error && props.onError()}
