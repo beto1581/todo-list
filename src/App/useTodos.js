@@ -15,19 +15,30 @@ function useTodos() {
     } = useLocalStorage('TODOS_V1', []);
     const [searchValue, setSearchValue] = React.useState('');
     const [openModal, setOpenModal] = React.useState(false);
+    const [searchCategory, setSearchCategory] = React.useState('');
     const completedTodos = todos.filter(todo => !!todo.completed).length;
     const totalTodos = todos.length;
 
     let searchedTodos = [];
-    let searchedCategory = '';
-    
-    if (!searchValue.length >= 1) {
+     
+    if (!searchValue.length >= 1 && searchCategory==='') {
         searchedTodos = todos;
-    } else {
+    }else if (!searchValue.length >= 1 && searchCategory!=='') {
         searchedTodos = todos.filter(todo => {
             const todoText = todo.text.toLowerCase();
             const searchText = searchValue.toLowerCase();
-            return todoText.includes(searchText);
+            return todo.category===searchCategory;
+            
+        });
+    }else {
+        searchedTodos = todos.filter(todo => {
+            const todoText = todo.text.toLowerCase();
+            const searchText = searchValue.toLowerCase();
+            if(searchCategory===''){
+                return todoText.includes(searchText);
+            }else{
+                return (todoText.includes(searchText) && (todo.category===searchCategory));
+            }
         });
     }
 
@@ -72,6 +83,8 @@ function useTodos() {
             openModal,
             setOpenModal,
             sincronizeTodos,
+            searchCategory,
+            setSearchCategory,
         }
 
     );

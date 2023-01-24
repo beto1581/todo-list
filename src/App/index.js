@@ -29,6 +29,8 @@ function App() {
         setOpenModal,
         addTodo,
         sincronizeTodos,
+        searchCategory,
+        setSearchCategory,
     } = useTodos();
     return (
         <React.Fragment>
@@ -41,7 +43,10 @@ function App() {
                     searchValue={searchValue}
                     setSearchValue={setSearchValue}
                 />
-                <TodoFilter />
+                <TodoFilter
+                searchCategory={searchCategory}
+                setSearchCategory={setSearchCategory}
+                 />
             </TodoHeader>
             <TodoList
                 error={error}
