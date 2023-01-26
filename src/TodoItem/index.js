@@ -30,6 +30,12 @@ function TodoItem(props) {
             icon: <BiSmile />
         }
     ];
+
+    function getSelection(cat){
+    //     return availableOptions.filter((cat2)=>{ 
+    //         // return (!cat2.value.text!=cat);
+    //  })
+    }
     return (
         <li className="TodoItem">
             <span
@@ -39,8 +45,8 @@ function TodoItem(props) {
                 √
             </span>
             <p className={`TodoItem-p ${props.completed && 'TodoItem-p--complete'}`}>
-                {props.text}
-                {props.category}
+                <span className='TodoItem-p--tittle'>{props.text}</span>
+                <span className='TodoItem-p--icon'> </span>
             </p>
             <span
                 className="Icon Icon-delete"
