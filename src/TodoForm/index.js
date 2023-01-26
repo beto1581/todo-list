@@ -26,6 +26,7 @@ function TodoForm({ addTodo, setOpenModal }) {
     // handle onChange event of the dropdown
     const handleChange = e => {
         setSelectedOption(e);
+        console.log('hola');
     }
 
     const availableOptions = [
