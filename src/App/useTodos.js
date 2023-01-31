@@ -20,24 +20,22 @@ function useTodos() {
     const totalTodos = todos.length;
 
     let searchedTodos = [];
-     
-    if (!searchValue.length >= 1 && searchCategory==='') {
+
+    if (!searchValue.length >= 1 && searchCategory === '') {
         searchedTodos = todos;
-    }else if (!searchValue.length >= 1 && searchCategory!=='') {
+    } else if (!searchValue.length >= 1 && searchCategory !== '') {
         searchedTodos = todos.filter(todo => {
-            const todoText = todo.text.toLowerCase();
-            const searchText = searchValue.toLowerCase();
-            return todo.category===searchCategory;
-            
+            return todo.category === searchCategory;
+
         });
-    }else {
+    } else {
         searchedTodos = todos.filter(todo => {
-            const todoText = todo.text.toLowerCase();
-            const searchText = searchValue.toLowerCase();
-            if(searchCategory===''){
+            let todoText = todo.text.toLowerCase();
+            let searchText = searchValue.toLowerCase();
+            if (searchCategory === '') {
                 return todoText.includes(searchText);
-            }else{
-                return (todoText.includes(searchText) && (todo.category===searchCategory));
+            } else {
+                return (todoText.includes(searchText) && (todo.category === searchCategory));
             }
         });
     }

@@ -44,9 +44,9 @@ function App() {
                     setSearchValue={setSearchValue}
                 />
                 <TodoFilter
-                searchCategory={searchCategory}
-                setSearchCategory={setSearchCategory}
-                 />
+                    searchCategory={searchCategory}
+                    setSearchCategory={setSearchCategory}
+                />
             </TodoHeader>
             <TodoList
                 error={error}
@@ -58,7 +58,7 @@ function App() {
                 onError={() => <TodosError />}
                 onLoading={() => <TodosLoading />}
                 onEmptyTodos={() => <EmptyTodos />}
-                onEmptySearchResults={(searchText) => <p>No hay resultados para: {searchText}</p>}
+                onEmptySearchResults={(searchText) => <p>No hay resultados para: {searchText} {searchCategory && 'en la categoria: ' + searchCategory}</p>}
                 render={(todo) => (
                     <TodoItem
                         key={todo.text}

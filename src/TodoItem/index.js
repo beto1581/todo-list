@@ -1,6 +1,6 @@
 import React from 'react';
 import './TodoItem.css';
-import { BiHome, BiMoney, BiBookBookmark, BiRun, BiSmile } from "react-icons/bi";
+import { BiHome, BiMoney, BiBookBookmark, BiRun, BiSmile, BiCheck } from "react-icons/bi";
 
 function TodoItem(props) {
     const availableOptions = [
@@ -43,11 +43,12 @@ function TodoItem(props) {
                 className={`Icon Icon-check ${props.completed && 'Icon-check--active'}`}
                 onClick={props.onComplete}
             >
-                √
+                <BiCheck />
             </span>
             <p className={`TodoItem-p ${props.completed && 'TodoItem-p--complete'}`}>
-                <span className='TodoItem-p--tittle'>{props.text}</span>
                 <span className='TodoItem-p--icon'> {getSelection(props.category)}</span>
+                <span className='TodoItem-p--tittle'>{props.text}</span>
+
             </p>
             <span
                 className="Icon Icon-delete"
