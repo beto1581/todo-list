@@ -1,6 +1,6 @@
 import React from 'react';
 import './TodoItem.css';
-import { BiHome, BiMoney, BiBookBookmark, BiRun, BiSmile } from "react-icons/bi";
+import { BiHome, BiMoney, BiBookBookmark, BiRun, BiSmile,BiCheck } from "react-icons/bi";
 
 function TodoItem(props) {
     const availableOptions = [
