@@ -1,7 +1,6 @@
 import React from 'react';
 import './TodoItem.css';
 import { BiHome, BiMoney, BiBookBookmark, BiRun, BiSmile } from "react-icons/bi";
-import { calculateNewValue } from '@testing-library/user-event/dist/utils';
 
 function TodoItem(props) {
     const availableOptions = [
@@ -33,11 +32,9 @@ function TodoItem(props) {
     ];
 
     function getSelection(cat){
-        return availableOptions.forEach((cat2)=>{ 
-            console.log(cat2.value); 
-            if(cat2.value===cat)
-                return cat2.icon
-     });
+    //     return availableOptions.filter((cat2)=>{ 
+    //         // return (!cat2.value.text!=cat);
+    //  })
     }
     return (
         <li className="TodoItem">
@@ -45,11 +42,12 @@ function TodoItem(props) {
                 className={`Icon Icon-check ${props.completed && 'Icon-check--active'}`}
                 onClick={props.onComplete}
             >
-                √
+                <BiCheck />
             </span>
             <p className={`TodoItem-p ${props.completed && 'TodoItem-p--complete'}`}>
+                <span className='TodoItem-p--icon'> {getSelection(props.category)}</span>
                 <span className='TodoItem-p--tittle'>{props.text}</span>
-                <span className='TodoItem-p--icon'>{getSelection(props.category)}</span>
+                <span className='TodoItem-p--icon'> </span>
             </p>
             <span
                 className="Icon Icon-delete"
