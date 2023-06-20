@@ -8,7 +8,7 @@ function TodoSearch({ searchValue, setSearchValue, loading }) {
         <>
             <input
                 className="TodoSearch"
-                placeholder="Cebolla"
+                placeholder="Tarea a Buscar"
                 value={searchValue}
                 onChange={onSearchValueChange}
                 disabled={loading}

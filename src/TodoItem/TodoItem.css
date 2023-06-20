@@ -1,11 +1,12 @@
 .TodoItem {
-    background-color: #FAFAFA;
+    background-color: #00103a;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 24px;
     box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.15);
+    border-radius: 20px;
 }
 
 .TodoItem-p {
@@ -25,13 +26,14 @@
 
 .TodoItem-p--icon {
     font-size: 2rem;
-    color: rgb(0, 0, 80);
+    color: #fefefe;
     padding: 2px;
 }
 
 .TodoItem-p--tittle {
     font-weight: bold;
     font-size: 1.3rem;
+    color: #fefefe;
 }
 
 .Icon {
@@ -50,7 +52,8 @@
     position: absolute;
     left: 12px;
     border-radius: 50%;
-    border: 1px solid gray
+    border: 1px solid gray;
+    color: #2196F3;
 }
 
 .Icon-check--active {
