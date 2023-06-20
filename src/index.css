@@ -4,10 +4,14 @@ body {
   background: #00103a;
   color: #1E1E1F;
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-}
+  }
 
 #root {
+<<<<<<< HEAD
   margin: 020px auto;
+=======
+  margin: 0;
+>>>>>>> 1a94cd54d969a39e1167b835f072981f6942d3a6
   position: relative;
   min-height: 100vh;
   max-width: 800px;
